@@ -1,0 +1,17 @@
+<h1 class="center">New Message</h1>
+
+  <%= form_for [current_user, @message] do |f| %>
+    <div class="input-field">
+      <%= f.text_field :to %>
+      <%= f.label :to %>
+    </div>
+    <div class="input-field">
+      <%= f.text_field :from %>
+      <%= f.label :from %>
+    </div>
+    <div class="input-field">
+      <%= f.text_field :body %>
+      <%= f.label :body %>
+    </div>
+    <%= f.submit "Send", class: "btn waves-effect" %>
+<% end %>
