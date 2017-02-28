@@ -2,5 +2,6 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <hr>
+<% if user_signed_in? %>
 <%= link_to "Messages", user_messages_path(current_user) %><br>
 <%= link_to "Contacts", user_contacts_path(current_user) %>
