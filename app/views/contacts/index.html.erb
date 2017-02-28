@@ -1,0 +1,9 @@
+<ul class="collection with-header">
+  <h1 class="collection-header"><%= current_user.username %>'s contacts</h1>
+  <% @contacts.each do |contact| %>
+  <li class="collection-item"><%= link_to contact.name, user_contact_path(current_user, contact) %>, <%= contact.number %></li>
+  <% end %>
+</ul>
+
+<hr>
+<%= link_to "New Contact", new_user_contact_path(current_user) %>

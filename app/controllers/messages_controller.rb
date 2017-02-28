@@ -4,7 +4,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = Message.new(body: message_params[:body], to: message_params[:to], from: current_user.number )
+    binding.pry
     if current_user.messages.push(@message)
       flash[:notice] = "Your message was sent!"
       redirect_to user_messages_path

@@ -23,7 +23,7 @@
               <li><%= link_to "User Page", current_user %></li>
               <li class="divider"></li>
               <li><%= link_to "Write a new message!", new_user_message_path(current_user) %></li>
-              <li><%= link_to 'Edit Profile', edit_user_registration_path, href: '#modal4', class: 'modal-trigger' %></li>
+              <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             </ul>
            <% else %>
