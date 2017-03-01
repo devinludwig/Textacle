@@ -2,16 +2,15 @@
 
   <%= form_for [current_user, @message] do |f| %>
     <div class="input-field">
-      <%= f.text_field :to %>
-      <%= f.label :to %>
+      <i class="material-icons prefix">chat</i>
+      <%= f.select(:to, current_user.contacts.collect {|c| [ c.name, c.number ] }, {prompt: 'Choose a Contact'}) %>
     </div>
+
     <div class="input-field">
-      <%= f.text_field :from %>
-      <%= f.label :from %>
-    </div>
-    <div class="input-field">
-      <%= f.text_field :body %>
+      <i class="material-icons prefix">mode_edit</i>
+      <%= f.text_area :body, class: "materialize-textarea" %>
       <%= f.label :body %>
+      <%= f.text_field :from, type: "hidden", value: current_user.phone %>
     </div>
     <%= f.submit "Send", class: "btn waves-effect" %>
 <% end %>
